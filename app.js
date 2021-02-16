@@ -25,8 +25,6 @@ function getData(e){
                 if(response.user.message === "Not Found"){
                 ui.showError("User not found... "); 
                 }else{
-                    ui.addSearchedUserToUI(username);
-                    Storage.addSearchedUserToStorage(username);
                     ui.showUserInfo(response.user);
                     ui.showReposInfo(response.repo);
                 }
@@ -44,19 +42,5 @@ function clearAllSearched(){
 }
 
 function getAllSearched(){
-
-    let users = Storage.getSearchedUsersFromStorage();
-
-    let result = "";
-
-    users.forEach(user => {
-
-        //<li class="list-group-item">asdaskdjkasjkşdjşasjd</li>
-        result += `<li class="list-group-item">${user}</li>`;
-
-
-    });
-
-    lastUsers.innerHTML = result;
 
 }
