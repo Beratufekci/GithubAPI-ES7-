@@ -4,6 +4,7 @@ class UI{
         this.repoDiv = document.getElementById("repos");
         this.lastUsers = document.getElementById("last-users");
         this.inputField = document.getElementById("githubname");
+        this.cardBody = document.querySelector(".card-body");
     }
     clearInput(){
         this.inputField.value = "";
@@ -53,7 +54,22 @@ class UI{
           </div>
     </div> 
 
-        `
+        `;
 
+    }
+
+    showError(message){
+
+        const div = document.createElement("div");
+
+        div.className = "alert alert-danger";
+        div.textContent = message;
+
+        this.cardBody.appendChild(div);
+
+        setTimeout(() => {
+            div.remove();
+        },2000);
+         
     }
 }
