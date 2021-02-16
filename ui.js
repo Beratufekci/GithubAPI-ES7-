@@ -117,4 +117,10 @@ class UI{
 
         }
     }
+
+    clearAllSearchedFromUI(){
+        while(this.lastUsers.firstElementChild !== null){
+            this.lastUsers.removeChild(this.lastUsers.firstElementChild);
+        }
+    }
 }
