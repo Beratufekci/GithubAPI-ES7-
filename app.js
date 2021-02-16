@@ -26,6 +26,7 @@ function getData(e){
                 ui.showError("User not found... "); 
                 }else{
                     ui.showUserInfo(response.user);
+                    ui.showReposInfo(response.repo);
                 }
             })
             .catch(err => ui.showError(err));
